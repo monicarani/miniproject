@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+
+<h2></h2>
+<div class="cont">
+    <form id="upload-file"  action="/predict" method="POST" enctype="multipart/form-data">
+      <div class="card">
+        <div class="card-header">
+         <h4> Choose the Image </h4>
+        </div>
+        <div class="card-body">
+          <p class="card-text"><input type="file" id="file" name="file" accept=".jpg, .png, .jpeg" ></p>
+          <input type="submit" class="btn btn-primary " name="submit" value="Convert">
+        </div>
+      </div>
+    </form>
+    <div class="loader" style="display:none;"></div>
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</div>
+
+{% endblock %}
