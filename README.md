@@ -1,7 +1,5 @@
 # Miniproject
-# ML2021
-##### First course - Python for Engineers
-###### Level 9 : Bot with flask and heroku
+# IMAGE CARTOONIZER
 
 
 ##### Team Members
