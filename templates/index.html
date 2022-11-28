@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block content %}
+
+
+  <div class="loader" style="display:none;"></div>
+    <h3 id="result">
+        <span> </span>
+    </h3>
+<div class="footer">
+  <div class="file1">
+    <p>Choose the images you want cartoonize </p>
+      <p>and submit through Click to Convert </p>
+      <hr>
+    <form id="upload-file"  action="/predict" method="POST" enctype="multipart/form-data">
+          <p style="margin-right: 30%; margin-left: 20%;"> Choose the Image </p>
+          <p style="margin-left: 10%;"><input type="file" id="file" name="files[]" accept="image/*" multiple="true" autocomplete="off" required></p>
+          <input type="submit" class="btn btn-primary " name="submit" value="Click to Convert">
+    </form>
+  </div>
+    <div class="footer1">
+      
+      
+      <p id="footer2">
+        <form id="upload-file"  action="/predict1" method="POST" enctype="multipart/form-data">
+          <p style="margin-top: 0%; "> Upload Image by clicking on camera button</p>
+          <hr>
+            <p><input class="img1" type="image" src="{{ url_for('static',filename='assets/camerabutton.webp') }} " width="30px"/></p>
+            <input type="file" id="my_file" name="file" accept="image/*" style="display: none;" required/>
+            <input style="margin-left: 8%;" type="submit" class="btn btn-primary " name="submit" value="Add text">
+          </p>
+        </form>
+      </p>
+    </div>
+    <div class="uploadfiles">
+      <p style="margin-right: 30%;" >Choose the images you   </p>
+      <p style="margin-right: 30%;" >want to display</p>
+      <hr style="margin-right: 30%";  style="width: 40%;">
+      <form id="upload-file" action="/predict2" method="POST" enctype="multipart/form-data">
+        <p style="margin-right: 30%; margin-top: 5%;"> Upload the images </p>
+        <p>
+          <input type="file" name="files[]" accept="image/*" multiple="true" autocomplete="off" required>
+        </p>
+        <input style="margin-left: 8%;" class="btn btn-primary " type="submit" value="Submit">
+      </form>
+    </div>
+    
+</div>
+
+{% endblock %}

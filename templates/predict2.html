@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block content %}
+
+  <div id="messagebox" style="margin-top: 3%;">
+    <div style="margin-left: 5%;">
+    {% if filenames %}
+        {% for filename in filenames %}
+            <img class="multipleimages" style="width: 300px;height:300px;" src="{{ url_for('upload_img', filename=filename) }}">
+        {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

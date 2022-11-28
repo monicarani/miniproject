@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+
+  <div id="messagebox">
+  <div class="text">
+    
+    <h5 style="text-align: center; color:rgb(253, 251, 251); ">Click on the image to download</h5>
+  </div>
+  {% if file_name %}
+    {% for i in range(0,len) %}
+    <div style="text-align: center;">
+      <div class="frommessage" style="text-align: left;">
+        <h2 class="a">Uploaded Image</h2>
+          <img style="border-radius: 20%;height:300px;width: 300px;" src="{{ url_for('upload_img', filename=file_name[i]) }}" >
+    </div>
+
+    <div class="tommessage" style="text-align: right;">
+        <h2 class="a">Cartoonized Image</h2>
+          <a href="{{ url_for('cartoon_img', filename=cartoon_file[i]) }}" download>
+            <img style="border-radius: 20%;height:300px;width: 300px;" src="{{ url_for('cartoon_img', filename=cartoon_file[i]) }}" >
+          </a>
+    </div>
+    </div>
+      
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% endblock %}

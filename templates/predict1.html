@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %}
+
+  <div id="messagebox">
+    <p style="margin-top: 5%; margin-left: 20%; padding: 3%;">
+        <textarea class="blur" onkeyup='writeText(this)' id='textArea' 
+            placeholder='Enter some value for text' rows='2' cols='50'>
+        </textarea>
+        <!-- Button to save the image with the text. -->
+        <p><input class="savebutton" type="button" onclick="saveImageWithText();" id="bt" value="Save the Image" /></p>
+    </p>
+    <div style="text-align: center;">
+      <div class="frommessage" style="text-align: left;">
+        <h2 class="a">Uploaded Image</h2>
+        <h2 class="a" style="color: rgb(133, 128, 128);">-</h2>
+          <img id="mainimage" style="border-radius: 20%;height:300px;width: 350px;" src="{{ url_for('upload_img', filename=file_name) }}" >
+    </div>
+    
+    <div class="tommessage" style="text-align: right;">
+        <div>
+            <h2 class="a">Write the text on </h2>
+            <h2 class="a">image and download</h2>
+            <div class="mainContainer" id='mainContainer'>
+              <!-- The default image. You can select a different image too. -->
+              <img style="border-radius: 20%;height:300px;width: 400px; text-align: center;" src="{{ url_for('cartoon_img', filename=cartoon_file) }}" id="myimage" alt="" />
+                  
+              <!-- The text, which is also draggable. -->
+              <div id='theText'  onmousedown='this.style.border = "dotted 1.5px black";'>sample text</div>
+            </div>
+        </div>
+    </div>
+    <canvas style="display:block; margin-left: 20%; " id="imageCanvas" >
+      <canvas id="canvasID"></canvas>
+  </canvas> 
+</div>
+
+{% endblock %}
